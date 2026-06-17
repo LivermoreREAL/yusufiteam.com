@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yusufi Team | Key Realty Group — Virginia, Maryland & D.C.</title>
+  <meta name="description" content="The Yusufi Team, operating under Key Realty Group, serves buyers, sellers, and investors across Virginia, Maryland, and D.C. Led by Principal Broker Akhtar Yusufi, licensed since 2000.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #0A0A0A; color: #EDE9E0; }
+
+    .dk  { background: #0A0A0A; color: #EDE9E0; }
+    .iv  { background: #F8F4EE; color: #1A1410; }
+    .sr  { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .gd  { color: #C8A951; }
+    .gd-lt { color: #8B6C14; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #0A0A0A;
+      padding: 14px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 0.5px solid rgba(200,169,81,0.1);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand-text { line-height: 1; }
+    .nav-brand-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: #EDE9E0; }
+    .nav-brand-sub { font-size: 8px; letter-spacing: .16em; text-transform: uppercase; color: #3a3a3a; margin-top: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: #555; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: #C8A951; }
+
+    /* Buttons */
+    .btn-gd {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #C8A951; color: #0A0A0A; border: none;
+      padding: 13px 26px; border-radius: 100px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-gd:hover { background: #d4b55e; }
+    .btn-wh {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.08); color: #EDE9E0;
+      border: 1px solid rgba(255,255,255,.5);
+      padding: 13px 26px; border-radius: 100px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-wh:hover { background: rgba(255,255,255,.14); }
+    .btn-dk {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(26,20,16,.06); color: #1A1410;
+      border: 1px solid rgba(26,20,16,.18);
+      padding: 13px 26px; border-radius: 100px;
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-dk:hover { background: rgba(26,20,16,.12); }
+
+    /* Badges */
+    .bdg-dk {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 0.5px solid rgba(200,169,81,0.3); border-radius: 100px;
+      padding: 4px 12px; font-size: 9px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase; color: #C8A951;
+    }
+    .bdg-dk::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: #C8A951; }
+    .bdg-lt {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 0.5px solid rgba(200,169,81,0.4); border-radius: 100px;
+      padding: 4px 12px; font-size: 9px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase; color: #8B6C14;
+    }
+    .bdg-lt::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: #C8A951; }
+    .tag-lt {
+      display: inline-block; padding: 3px 10px; border-radius: 100px;
+      border: 0.5px solid rgba(139,108,20,0.3);
+      font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #8B6C14;
+    }
+
+    /* Cards */
+    .cd-dk { background: #111; border: 0.5px solid rgba(200,169,81,0.15); border-radius: 16px; padding: 28px; }
+    .cd-wh { background: #FFF; border: 0.5px solid rgba(26,20,16,0.09); border-radius: 16px; padding: 28px; }
+    .ic-bx {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(200,169,81,0.1); border: 0.5px solid rgba(200,169,81,0.2);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+
+    /* Forms */
+    .fi {
+      width: 100%; padding: 10px 14px; border-radius: 8px;
+      border: 0.5px solid rgba(26,20,16,.15);
+      background: rgba(26,20,16,.04); color: #1A1410;
+      font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none;
+    }
+    .fi::placeholder { color: #aaa; }
+    .fi-dk {
+      width: 100%; padding: 10px 14px; border-radius: 8px;
+      border: 0.5px solid rgba(200,169,81,.25);
+      background: rgba(255,255,255,.04); color: #EDE9E0;
+      font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none;
+    }
+    .fi-dk::placeholder { color: #444; }
+    textarea.fi, textarea.fi-dk { resize: vertical; min-height: 80px; }
+
+    /* Layout helpers */
+    .section { padding: 72px 48px; }
+    .section-sm { padding: 48px 48px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 92vh; background: #0A0A0A;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.35; z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(8,7,5,0.68); z-index: 1;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; padding: 64px 40px;
+      max-width: 720px;
+    }
+
+    /* Property cards */
+    .prop-card { background: #111; border: 0.5px solid rgba(200,169,81,0.15); border-radius: 16px; overflow: hidden; }
+    .prop-photo {
+      height: 220px; overflow: hidden; position: relative;
+      background: #181818;
+    }
+    .prop-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .prop-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    }
+    .prop-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(200,169,81,0.15); border: 0.5px solid rgba(200,169,81,0.3);
+      border-radius: 100px; padding: 3px 10px;
+      font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #C8A951;
+    }
+    .prop-body { padding: 22px; }
+
+    /* Team cards */
+    .av-dk {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 0.5px solid rgba(200,169,81,0.2);
+      background: rgba(200,169,81,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600;
+      color: #C8A951; margin-bottom: 14px;
+    }
+
+    /* Search form card */
+    .search-card { background: #FFF; border: 0.5px solid rgba(26,20,16,0.08); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+
+    /* Divider */
+    .hr-lt { border: none; border-top: 0.5px solid rgba(26,20,16,0.08); }
+
+    /* Contact pills */
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 100px; border: 0.5px solid rgba(200,169,81,0.18); font-size: 12px; color: #666; text-decoration: none; }
+
+    /* Footer */
+    footer { padding: 18px 48px; border-top: 0.5px solid rgba(200,169,81,0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    /* Form toggle */
+    .inquiry-form { display: none; background: #111; border: 0.5px solid rgba(200,169,81,0.22); border-radius: 18px; padding: 36px; margin-bottom: 16px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-grid .full { grid-column: 1 / -1; }
+    label.fl { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #555; display: block; margin-bottom: 6px; }
+
+    /* Icon circle */
+    .ic-circle { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .section, .section-sm { padding: 48px 20px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 48px !important; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <svg width="68" height="26" viewBox="0 0 200 75" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="37" r="22" fill="none" stroke="#C8A951" stroke-width="9"/>
+      <rect x="54" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+      <rect x="62" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+      <rect x="70" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+      <rect x="75" y="33" width="72" height="8" rx="2" fill="#C8A951"/>
+      <rect x="122" y="16" width="14" height="25" fill="#C8A951"/>
+      <rect x="125" y="20" width="4" height="4" fill="#0A0A0A"/>
+      <rect x="125" y="28" width="4" height="4" fill="#0A0A0A"/>
+      <rect x="139" y="22" width="11" height="19" fill="#C8A951"/>
+      <rect x="142" y="26" width="3.5" height="3.5" fill="#0A0A0A"/>
+      <rect x="142" y="32" width="3.5" height="3.5" fill="#0A0A0A"/>
+      <rect x="153" y="10" width="15" height="31" fill="#C8A951"/>
+      <rect x="156" y="15" width="4" height="4" fill="#0A0A0A"/>
+      <rect x="156" y="24" width="4" height="4" fill="#0A0A0A"/>
+      <rect x="122" y="41" width="46" height="5" fill="#C8A951"/>
+    </svg>
+    <div class="nav-brand-text">
+      <div class="nav-brand-title">Yusufi<span class="gd">Team</span></div>
+      <div class="nav-brand-sub">Key Realty Group</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#listings">Listings</a>
+    <a href="#team">Team</a>
+    <a href="#about">About</a>
+    <a class="btn-gd" href="#contact" style="padding: 8px 18px; font-size: 9px;">Contact Us</a>
+  </div>
+</nav>
+
+<!-- 1. HERO — dark -->
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="video/untitled-design.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div style="margin-bottom: 26px; display: flex; justify-content: center;">
+      <svg width="170" height="64" viewBox="0 0 200 75" xmlns="http://www.w3.org/2000/svg" opacity=".82">
+        <circle cx="32" cy="37" r="22" fill="none" stroke="#C8A951" stroke-width="9"/>
+        <rect x="54" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+        <rect x="62" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+        <rect x="70" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
+        <rect x="75" y="33" width="72" height="8" rx="2" fill="#C8A951"/>
+        <rect x="122" y="16" width="14" height="25" fill="#C8A951"/>
+        <rect x="125" y="20" width="4" height="4" fill="#0A0A0A"/>
+        <rect x="125" y="28" width="4" height="4" fill="#0A0A0A"/>
+        <rect x="139" y="22" width="11" height="19" fill="#C8A951"/>
+        <rect x="142" y="26" width="3.5" height="3.5" fill="#0A0A0A"/>
+        <rect x="142" y="32" width="3.5" height="3.5" fill="#0A0A0A"/>
+        <rect x="153" y="10" width="15" height="31" fill="#C8A951"/>
+        <rect x="156" y="15" width="4" height="4" fill="#0A0A0A"/>
+        <rect x="156" y="24" width="4" height="4" fill="#0A0A0A"/>
+        <rect x="122" y="41" width="46" height="5" fill="#C8A951"/>
+      </svg>
+    </div>
+    <div class="bdg-dk" style="margin-bottom: 22px;">Virginia · Maryland · D.C.</div>
+    <h1 class="sr" style="font-size: 80px; font-weight: 600; line-height: .92; color: #EDE9E0; margin-bottom: 20px;">
+      Your <em class="gd">Key</em><br>to the DMV
+    </h1>
+    <p style="font-size: 15px; color: rgba(237,233,224,0.7); max-width: 400px; margin: 0 auto 36px; line-height: 1.8; font-weight: 300;">
+      Expert guidance. Trusted relationships. 26 years helping families buy, sell, and invest across Virginia, Maryland, and D.C.
+    </p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <a class="btn-gd" href="#search">
+        Find Your Home
+        <span class="ic-circle" style="background: rgba(0,0,0,.15);">
+          <i class="ti ti-arrow-right" style="font-size: 12px;"></i>
+        </span>
+      </a>
+      <a class="btn-wh" href="#team">Meet the Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SERVICES — ivory -->
+<section class="iv section" id="services">
+  <div style="margin-bottom: 40px;">
+    <div class="bdg-lt" style="margin-bottom: 14px;">What We Do</div>
+    <h2 class="sr" style="font-size: 52px; font-weight: 600; color: #1A1410; line-height: 1.02; margin-bottom: 12px;">
+      Full-Service<br>Real Estate
+    </h2>
+    <p style="font-size: 15px; color: #7A6E65; line-height: 1.7; max-width: 460px;">
+      From your first conversation to closing day, we are with you every step of the way.
+    </p>
+  </div>
+  <div class="grid-2">
+    <div class="cd-wh">
+      <div class="ic-bx"><i class="ti ti-key" style="font-size: 18px; color: #C8A951;"></i></div>
+      <div class="tag-lt" style="margin-bottom: 14px;">Buy a Home</div>
+      <h3 class="sr" style="font-size: 26px; font-weight: 600; color: #1A1410; margin-bottom: 10px;">Find Your Dream Home in the DMV</h3>
+      <p style="font-size: 14px; color: #7A6E65; line-height: 1.8;">We guide buyers through every stage, from pre-approval to closing. With 26 years of DMV market expertise, we know which neighborhoods fit your life, your budget, and your goals.</p>
+    </div>
+    <div class="cd-wh">
+      <div class="ic-bx"><i class="ti ti-trending-up" style="font-size: 18px; color: #C8A951;"></i></div>
+      <div class="tag-lt" style="margin-bottom: 14px;">Sell Your Home</div>
+      <h3 class="sr" style="font-size: 26px; font-weight: 600; color: #1A1410; margin-bottom: 10px;">Sell Faster and for More</h3>
+      <p style="font-size: 14px; color: #7A6E65; line-height: 1.8;">Strategic pricing, professional staging guidance, and targeted marketing that attracts qualified buyers. Our sellers consistently achieve strong results in the DMV's competitive market.</p>
+    </div>
+    <div class="cd-wh">
+      <div class="ic-bx"><i class="ti ti-building" style="font-size: 18px; color: #C8A951;"></i></div>
+      <div class="tag-lt" style="margin-bottom: 14px;">Invest</div>
+      <h3 class="sr" style="font-size: 26px; font-weight: 600; color: #1A1410; margin-bottom: 10px;">Grow Your Portfolio</h3>
+      <p style="font-size: 14px; color: #7A6E65; line-height: 1.8;">The DMV offers some of the strongest real estate investment returns in the country. We help you identify the right property, evaluate returns, and navigate acquisition with confidence.</p>
+    </div>
+    <div class="cd-wh">
+      <div class="ic-bx"><i class="ti ti-map-pin" style="font-size: 18px; color: #C8A951;"></i></div>
+      <div class="tag-lt" style="margin-bottom: 14px;">Relocate</div>
+      <h3 class="sr" style="font-size: 26px; font-weight: 600; color: #1A1410; margin-bottom: 10px;">Moving to the DMV?</h3>
+      <p style="font-size: 14px; color: #7A6E65; line-height: 1.8;">Relocating to Virginia, Maryland, or D.C.? We help you find the right neighborhood and transition seamlessly. We serve clients in English, Dari, Farsi, and Hindi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. FEATURED PROPERTIES — dark -->
+<section class="dk section" id="listings">
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 36px; flex-wrap: wrap; gap: 16px;">
+    <div>
+      <div class="bdg-dk" style="margin-bottom: 14px;">Active Listings</div>
+      <h2 class="sr" style="font-size: 48px; font-weight: 600; color: #EDE9E0; line-height: 1.05;">
+        Featured<br><em class="gd">Properties</em>
+      </h2>
+    </div>
+    <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
+       style="font-size: 11px; color: #C8A951; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; border: 0.5px solid rgba(200,169,81,0.25); border-radius: 100px; padding: 10px 16px;">
+      All listings on Homes.com <i class="ti ti-external-link" style="font-size: 11px;"></i>
+    </a>
+  </div>
+  <div class="grid-3">
+    <!-- Card 1 — McLean -->
+    <div class="prop-card">
+      <div class="prop-photo">
+        <div class="prop-photo-placeholder">
+          <i class="ti ti-home" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
+          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
+        </div>
+        <div class="prop-badge">Active</div>
+      </div>
+      <div class="prop-body">
+        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$1,749,000</div>
+        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">McLean, VA 22101</div>
+        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
+          <span><strong style="color: #EDE9E0;">4</strong> bd</span>
+          <span><strong style="color: #EDE9E0;">4.5</strong> ba</span>
+          <span><strong style="color: #EDE9E0;">3,800</strong> sqft</span>
+        </div>
+        <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
+           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
+          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Card 2 — Alexandria -->
+    <div class="prop-card">
+      <div class="prop-photo">
+        <div class="prop-photo-placeholder">
+          <i class="ti ti-building" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
+          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
+        </div>
+        <div class="prop-badge">New Construction</div>
+      </div>
+      <div class="prop-body">
+        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$1,565,000</div>
+        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">Alexandria, VA 22309</div>
+        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
+          <span><strong style="color: #EDE9E0;">5</strong> bd</span>
+          <span><strong style="color: #EDE9E0;">4.5</strong> ba</span>
+          <span><strong style="color: #EDE9E0;">4,200</strong> sqft</span>
+        </div>
+        <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
+           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
+          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Card 3 — Vienna -->
+    <div class="prop-card">
+      <div class="prop-photo">
+        <div class="prop-photo-placeholder">
+          <i class="ti ti-home-2" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
+          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
+        </div>
+        <div class="prop-badge">Active</div>
+      </div>
+      <div class="prop-body">
+        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$3,180,000</div>
+        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">Vienna, VA 22181</div>
+        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
+          <span><strong style="color: #EDE9E0;">6</strong> bd</span>
+          <span><strong style="color: #EDE9E0;">8</strong> ba</span>
+          <span><strong style="color: #EDE9E0;">7,500</strong> sqft</span>
+        </div>
+        <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
+           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
+          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. OUR STORY — ivory -->
+<section class="iv section" id="about">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+    <div>
+      <div class="bdg-lt" style="margin-bottom: 16px;">Our Story</div>
+      <h2 class="sr" style="font-size: 48px; font-weight: 600; color: #1A1410; line-height: 1.05; margin-bottom: 20px;">
+        Two Decades of<br><em class="gd-lt">Trust in the DMV</em>
+      </h2>
+      <p style="font-size: 15px; color: #7A6E65; line-height: 1.85; margin-bottom: 16px;">
+        Since earning his Principal Broker license in 2000, <strong style="color: #1A1410;">Akhtar Yusufi</strong> has built a reputation as one of Northern Virginia's most trusted real estate professionals.
+      </p>
+      <p style="font-size: 15px; color: #7A6E65; line-height: 1.85;">
+        Operating under <strong style="color: #1A1410;">Key Realty Group</strong> at 9504 Lee Highway in Fairfax, the team serves buyers, sellers, and investors across Virginia, Maryland, and D.C.
+      </p>
+    </div>
+    <div style="background: #FFF; border: 0.5px solid rgba(26,20,16,0.08); border-radius: 18px; padding: 4px;">
+      <div style="background: #FFFDF9; border-radius: 15px; padding: 36px;">
+        <div style="font-size: 8px; letter-spacing: .18em; text-transform: uppercase; color: #C8A951; margin-bottom: 14px;">Key Realty Group</div>
+        <div class="sr" style="font-size: 40px; font-weight: 600; color: #1A1410; line-height: 1; margin-bottom: 4px;">Licensed</div>
+        <div class="sr" style="font-size: 40px; font-weight: 600; color: #8B6C14; line-height: 1; margin-bottom: 28px;">Since 2000</div>
+        <div style="width: 32px; height: 0.5px; background: rgba(139,108,20,0.25); margin-bottom: 24px;"></div>
+        <div style="font-size: 13px; color: #7A6E65; line-height: 2.2;">
+          <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 4px;">
+            <i class="ti ti-map-pin" style="font-size: 15px; color: #C8A951; margin-top: 3px;"></i>
+            <span>9504 B Lee Highway, Suite B<br>Fairfax, VA 22031</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <i class="ti ti-phone" style="font-size: 15px; color: #C8A951;"></i>
+            <a href="tel:7039195666" style="color: inherit; text-decoration: none;">(703) 919-5666</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+            <i class="ti ti-mail" style="font-size: 15px; color: #C8A951;"></i>
+            <a href="mailto:yusufiteam@msn.com" style="color: inherit; text-decoration: none;">yusufiteam@msn.com</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <i class="ti ti-file" style="font-size: 15px; color: #C8A951;"></i>
+            <span>License #0226022988</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MEET THE TEAM — dark -->
+<section class="dk section" id="team">
+  <div style="margin-bottom: 36px;">
+    <div class="bdg-dk" style="margin-bottom: 14px;">The Team</div>
+    <h2 class="sr" style="font-size: 48px; font-weight: 600; color: #EDE9E0; line-height: 1.05;">
+      Meet the <em class="gd">Yusufi Team</em>
+    </h2>
+  </div>
+  <div class="grid-3">
+    <div class="cd-dk">
+      <div class="av-dk">AY</div>
+      <div class="sr" style="font-size: 24px; font-weight: 600; color: #EDE9E0; margin-bottom: 4px;">Akhtar Yusufi</div>
+      <div style="font-size: 8px; letter-spacing: .15em; text-transform: uppercase; color: #C8A951; margin-bottom: 16px;">Principal Broker · Team Leader</div>
+      <p style="font-size: 14px; color: #666; line-height: 1.8;">Licensed since 2000. Over 26 years guiding DMV clients with expertise, integrity, and deep knowledge of the Northern Virginia market.</p>
+    </div>
+    <div class="cd-dk">
+      <div class="av-dk">IY</div>
+      <div class="sr" style="font-size: 24px; font-weight: 600; color: #EDE9E0; margin-bottom: 4px;">Imal Yusufi</div>
+      <div style="font-size: 8px; letter-spacing: .15em; text-transform: uppercase; color: #C8A951; margin-bottom: 16px;">Real Estate Agent</div>
+      <p style="font-size: 14px; color: #666; line-height: 1.8;">Bringing fresh energy and a client-first approach to buyers and sellers across Northern Virginia and the broader DMV.</p>
+    </div>
+    <div class="cd-dk">
+      <div class="av-dk">ZY</div>
+      <div class="sr" style="font-size: 24px; font-weight: 600; color: #EDE9E0; margin-bottom: 4px;">Zermina Yusufi</div>
+      <div style="font-size: 8px; letter-spacing: .15em; text-transform: uppercase; color: #C8A951; margin-bottom: 16px;">Office Manager</div>
+      <p style="font-size: 14px; color: #666; line-height: 1.8;">The operational heart of the team. Zermina ensures every transaction flows smoothly from first contact to closing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FIND YOUR NEXT HOME — ivory -->
+<section class="iv section" id="search">
+  <div class="bdg-lt" style="margin-bottom: 14px;">Search Properties</div>
+  <h2 class="sr" style="font-size: 48px; font-weight: 600; color: #1A1410; line-height: 1.05; margin-bottom: 32px;">
+    Find Your<br><em class="gd-lt">Next Home</em>
+  </h2>
+  <div class="search-card">
+    <div class="grid-4">
+      <div>
+        <label class="fl">Location</label>
+        <input class="fi" type="text" placeholder="City, Zip, or Neighborhood...">
+      </div>
+      <div>
+        <label class="fl">Type</label>
+        <select class="fi" style="cursor: pointer; background: #fff; color: #1A1410;">
+          <option>Any Type</option>
+          <option>House</option>
+          <option>Condo</option>
+          <option>Townhouse</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl">Max Price</label>
+        <select class="fi" style="cursor: pointer; background: #fff; color: #1A1410;">
+          <option>Any</option>
+          <option>$500K</option>
+          <option>$750K</option>
+          <option>$1M</option>
+          <option>$2M+</option>
+        </select>
+      </div>
+      <div>
+        <label class="fl">Beds</label>
+        <select class="fi" style="cursor: pointer; background: #fff; color: #1A1410;">
+          <option>Any</option>
+          <option>2+</option>
+          <option>3+</option>
+          <option>4+</option>
+          <option>5+</option>
+        </select>
+      </div>
+      <button class="btn-gd" style="padding: 10px 18px; height: 40px; white-space: nowrap;">
+        Search <i class="ti ti-search" style="font-size: 13px;"></i>
+      </button>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <a class="btn-dk" href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener">
+      Browse All Active Listings on Homes.com <i class="ti ti-external-link" style="font-size: 13px;"></i>
+    </a>
+  </div>
+</section>
+
+<!-- 7. CTA + FORMS + FOOTER — dark -->
+<section class="dk section" id="contact">
+  <div class="cd-dk" style="text-align: center; padding: 60px 48px; margin-bottom: 28px;">
+    <div class="bdg-dk" style="margin-bottom: 20px;">Let's Connect</div>
+    <h2 class="sr" style="font-size: 56px; font-weight: 600; color: #EDE9E0; line-height: 1.02; margin-bottom: 16px;">
+      Let Us Help You<br><em class="gd">Make the Move</em>
+    </h2>
+    <p style="font-size: 15px; color: #666; margin: 0 auto 40px; max-width: 400px; line-height: 1.8;">
+      Whether you are buying, selling, or investing in the DMV, we are ready to guide you. We speak English, Dari, Farsi, and Hindi.
+    </p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <button class="btn-gd" onclick="toggleF('buy')">
+        Buy a Home
+        <span class="ic-circle" style="background: rgba(0,0,0,.15);">
+          <i class="ti ti-arrow-right" style="font-size: 12px;"></i>
+        </span>
+      </button>
+      <button class="btn-wh" onclick="toggleF('sell')">
+        List Your Home
+        <span class="ic-circle" style="background: rgba(255,255,255,.1);">
+          <i class="ti ti-arrow-right" style="font-size: 12px;"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Buyer Form -->
+  <div id="fb" class="inquiry-form">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px;">
+      <div>
+        <div class="bdg-dk" style="margin-bottom: 8px;">Buyer Inquiry</div>
+        <h3 class="sr" style="font-size: 30px; font-weight: 600; color: #EDE9E0;">Let's Find Your Home</h3>
+      </div>
+      <button onclick="toggleF('buy')" style="background: rgba(255,255,255,.06); border: 0.5px solid rgba(255,255,255,.1); border-radius: 50%; width: 34px; height: 34px; color: #888; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <i class="ti ti-x" style="font-size: 14px;"></i>
+      </button>
+    </div>
+    <div class="form-grid">
+      <div><label class="fl">Full Name</label><input class="fi-dk" type="text" placeholder="Your name (optional)"></div>
+      <div><label class="fl">Phone</label><input class="fi-dk" type="tel" placeholder="(xxx) xxx-xxxx (optional)"></div>
+      <div><label class="fl">Email</label><input class="fi-dk" type="email" placeholder="your@email.com (optional)"></div>
+      <div><label class="fl">Target Area</label><input class="fi-dk" type="text" placeholder="Fairfax, McLean, Arlington... (optional)"></div>
+      <div class="full"><label class="fl">Tell Us What You're Looking For</label><textarea class="fi-dk" placeholder="Budget, timeline, home type, or anything else (optional)"></textarea></div>
+    </div>
+    <button class="btn-gd" style="margin-top: 22px;">
+      Submit Inquiry <i class="ti ti-send" style="font-size: 13px;"></i>
+    </button>
+  </div>
+
+  <!-- Seller Form -->
+  <div id="fs" class="inquiry-form">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px;">
+      <div>
+        <div class="bdg-dk" style="margin-bottom: 8px;">Seller Inquiry</div>
+        <h3 class="sr" style="font-size: 30px; font-weight: 600; color: #EDE9E0;">Let's List Your Home</h3>
+      </div>
+      <button onclick="toggleF('sell')" style="background: rgba(255,255,255,.06); border: 0.5px solid rgba(255,255,255,.1); border-radius: 50%; width: 34px; height: 34px; color: #888; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <i class="ti ti-x" style="font-size: 14px;"></i>
+      </button>
+    </div>
+    <div class="form-grid">
+      <div><label class="fl">Full Name</label><input class="fi-dk" type="text" placeholder="Your name (optional)"></div>
+      <div><label class="fl">Phone</label><input class="fi-dk" type="tel" placeholder="(xxx) xxx-xxxx (optional)"></div>
+      <div><label class="fl">Email</label><input class="fi-dk" type="email" placeholder="your@email.com (optional)"></div>
+      <div><label class="fl">Property Address</label><input class="fi-dk" type="text" placeholder="Street, City, State (optional)"></div>
+      <div class="full"><label class="fl">Tell Us About Your Property</label><textarea class="fi-dk" placeholder="Bedrooms, baths, condition, timeline, or anything else (optional)"></textarea></div>
+    </div>
+    <button class="btn-gd" style="margin-top: 22px;">
+      Submit Inquiry <i class="ti ti-send" style="font-size: 13px;"></i>
+    </button>
+  </div>
+
+  <!-- Contact pills -->
+  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding-top: 8px;">
+    <a class="pill" href="tel:7039195666">
+      <i class="ti ti-phone" style="font-size: 14px; color: #C8A951;"></i>(703) 919-5666
+    </a>
+    <a class="pill" href="mailto:yusufiteam@msn.com">
+      <i class="ti ti-mail" style="font-size: 14px; color: #C8A951;"></i>yusufiteam@msn.com
+    </a>
+    <span class="pill">
+      <i class="ti ti-map-pin" style="font-size: 14px; color: #C8A951;"></i>9504 B Lee Hwy, Fairfax VA
+    </span>
+  </div>
+</section>
+
+<footer class="dk">
+  <span class="sr" style="font-size: 15px; font-weight: 600; color: #EDE9E0;">
+    Yusufi<span class="gd">Team</span> · Key Realty Group
+  </span>
+  <span style="font-size: 10px; color: #333;">© 2026 Yusufi Team · License #0226022988</span>
+  <div style="display: flex; gap: 16px;">
+    <a href="#" style="font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #333; text-decoration: none;">Privacy</a>
+    <a href="#" style="font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #333; text-decoration: none;">Fair Housing</a>
+  </div>
+</footer>
+
+<script>
+  function toggleF(t) {
+    var b = document.getElementById('fb'), s = document.getElementById('fs');
+    if (t === 'buy') {
+      var open = b.style.display !== 'none' && b.style.display !== '';
+      s.style.display = 'none';
+      b.style.display = open ? 'none' : 'block';
+      if (!open) b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      var open2 = s.style.display !== 'none' && s.style.display !== '';
+      b.style.display = 'none';
+      s.style.display = open2 ? 'none' : 'block';
+      if (!open2) s.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+</script>
+</body>
+</html>
