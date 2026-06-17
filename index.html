@@ -28,10 +28,10 @@
       display: flex; align-items: center; justify-content: space-between;
       border-bottom: 0.5px solid rgba(200,169,81,0.1);
     }
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
     .nav-brand-text { line-height: 1; }
-    .nav-brand-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: #EDE9E0; }
-    .nav-brand-sub { font-size: 8px; letter-spacing: .16em; text-transform: uppercase; color: #3a3a3a; margin-top: 2px; }
+    .nav-brand-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: #EDE9E0; }
+    .nav-brand-sub { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #999; margin-top: 4px; }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a { font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: #555; text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: #C8A951; }
@@ -192,13 +192,37 @@
     .ic-circle { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
 
     @media (max-width: 768px) {
-      nav { padding: 12px 20px; }
+      nav { padding: 14px 20px; }
+      .nav-brand-title { font-size: 24px; }
+      .nav-brand-sub { font-size: 10px; }
+      nav svg { width: 96px; height: 37px; }
       .nav-links { display: none; }
       .section, .section-sm { padding: 48px 20px; }
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .grid-4 { grid-template-columns: 1fr; }
       .hero-content h1 { font-size: 48px !important; }
       footer { flex-direction: column; text-align: center; }
+
+      /* Our Story — stack single column, card full width */
+      #about .grid-2 { grid-template-columns: 1fr !important; gap: 28px; }
+      #about .sr { font-size: 36px !important; }
+      #about > div > div:last-child { padding: 3px; }
+      #about > div > div:last-child > div { padding: 24px; }
+      #about .ti { font-size: 16px !important; }
+      #about [style*="font-size: 16px"] { font-size: 15px !important; }
+      #about [style*="font-size: 40px"] { font-size: 32px !important; }
+
+      /* Search form stacks on mobile */
+      .search-card .grid-4 { display: flex; flex-direction: column; gap: 12px; }
+      .search-card .grid-4 button { width: 100%; justify-content: center; height: auto; padding: 14px; }
+
+      /* Form grids stack */
+      .form-grid { grid-template-columns: 1fr; }
+      .form-grid .full { grid-column: 1; }
+
+      /* CTA padding */
+      .cd-dk[style*="padding: 60px"] { padding: 36px 24px !important; }
+      .cd-dk[style*="padding: 60px"] h2 { font-size: 36px !important; }
     }
   </style>
 </head>
@@ -207,7 +231,7 @@
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="#">
-    <svg width="68" height="26" viewBox="0 0 200 75" xmlns="http://www.w3.org/2000/svg">
+    <svg width="136" height="52" viewBox="0 0 200 75" xmlns="http://www.w3.org/2000/svg">
       <circle cx="32" cy="37" r="22" fill="none" stroke="#C8A951" stroke-width="9"/>
       <rect x="54" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
       <rect x="62" y="31" width="5" height="12" rx="2" fill="#C8A951"/>
@@ -430,21 +454,21 @@
         <div class="sr" style="font-size: 40px; font-weight: 600; color: #1A1410; line-height: 1; margin-bottom: 4px;">Licensed</div>
         <div class="sr" style="font-size: 40px; font-weight: 600; color: #8B6C14; line-height: 1; margin-bottom: 28px;">Since 2000</div>
         <div style="width: 32px; height: 0.5px; background: rgba(139,108,20,0.25); margin-bottom: 24px;"></div>
-        <div style="font-size: 13px; color: #7A6E65; line-height: 2.2;">
-          <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 4px;">
-            <i class="ti ti-map-pin" style="font-size: 15px; color: #C8A951; margin-top: 3px;"></i>
+        <div style="font-size: 16px; color: #7A6E65; line-height: 2;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 6px;">
+            <i class="ti ti-map-pin" style="font-size: 18px; color: #C8A951; margin-top: 4px; flex-shrink: 0;"></i>
             <span>9504 B Lee Highway, Suite B<br>Fairfax, VA 22031</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
-            <i class="ti ti-phone" style="font-size: 15px; color: #C8A951;"></i>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+            <i class="ti ti-phone" style="font-size: 18px; color: #C8A951; flex-shrink: 0;"></i>
             <a href="tel:7039195666" style="color: inherit; text-decoration: none;">(703) 919-5666</a>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
-            <i class="ti ti-mail" style="font-size: 15px; color: #C8A951;"></i>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+            <i class="ti ti-mail" style="font-size: 18px; color: #C8A951; flex-shrink: 0;"></i>
             <a href="mailto:yusufiteam@msn.com" style="color: inherit; text-decoration: none;">yusufiteam@msn.com</a>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <i class="ti ti-file" style="font-size: 15px; color: #C8A951;"></i>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="ti ti-file" style="font-size: 18px; color: #C8A951; flex-shrink: 0;"></i>
             <span>License #0226022988</span>
           </div>
         </div>
