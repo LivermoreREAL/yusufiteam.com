@@ -141,24 +141,27 @@
       max-width: 720px;
     }
 
-    /* Property cards */
-    .prop-card { background: #111; border: 0.5px solid rgba(200,169,81,0.15); border-radius: 16px; overflow: hidden; }
-    .prop-photo {
-      height: 220px; overflow: hidden; position: relative;
-      background: #181818;
+    /* Property cards — Option A editorial style */
+    .prop-card { background: #111; border: 0.5px solid rgba(200,169,81,0.15); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+    .prop-header { padding: 28px 26px 22px; border-bottom: 0.5px solid rgba(200,169,81,0.1); position: relative; }
+    .prop-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 38px; font-weight: 600; color: #EDE9E0; line-height: 1; }
+    .prop-price-note { font-size: 13px; color: #666; margin-top: 4px; }
+    .prop-status {
+      position: absolute; top: 18px; right: 18px;
+      font-size: 8px; letter-spacing: .12em; text-transform: uppercase;
+      border-radius: 100px; padding: 4px 11px;
     }
-    .prop-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .prop-photo-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-    }
-    .prop-badge {
-      position: absolute; top: 12px; left: 12px;
-      background: rgba(200,169,81,0.15); border: 0.5px solid rgba(200,169,81,0.3);
-      border-radius: 100px; padding: 3px 10px;
-      font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #C8A951;
-    }
-    .prop-body { padding: 22px; }
+    .prop-status-sale { color: #C8A951; border: 0.5px solid rgba(200,169,81,0.35); background: rgba(200,169,81,0.08); }
+    .prop-status-rent { color: #7eb8a4; border: 0.5px solid rgba(126,184,164,0.35); background: rgba(126,184,164,0.08); }
+    .prop-body { padding: 20px 26px; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+    .prop-address { font-size: 15px; color: #EDE9E0; font-weight: 400; }
+    .prop-city { font-size: 11px; color: #555; margin-top: 3px; }
+    .prop-specs { display: flex; gap: 0; border: 0.5px solid rgba(200,169,81,0.1); border-radius: 10px; overflow: hidden; }
+    .prop-spec { flex: 1; padding: 10px 0; text-align: center; border-right: 0.5px solid rgba(200,169,81,0.1); }
+    .prop-spec:last-child { border-right: none; }
+    .prop-spec strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: #EDE9E0; }
+    .prop-spec span { font-size: 8px; color: #555; text-transform: uppercase; letter-spacing: .1em; }
+    .prop-footer { padding: 14px 26px; border-top: 0.5px solid rgba(200,169,81,0.08); display: flex; justify-content: space-between; align-items: center; }
 
     /* Team cards */
     .av-dk {
@@ -375,7 +378,7 @@
 <section class="dk section" id="listings">
   <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 36px; flex-wrap: wrap; gap: 16px;">
     <div>
-      <div class="bdg-dk" style="margin-bottom: 14px;">Active Listings</div>
+      <div class="bdg-dk" style="margin-bottom: 14px;">For Sale &amp; For Rent</div>
       <h2 class="sr" style="font-size: 48px; font-weight: 600; color: #EDE9E0; line-height: 1.05;">
         Featured<br><em class="gd">Properties</em>
       </h2>
@@ -386,72 +389,84 @@
     </a>
   </div>
   <div class="grid-3">
-    <!-- Card 1 — McLean -->
+
+    <!-- Card 1 — McLean · For Sale -->
     <div class="prop-card">
-      <div class="prop-photo">
-        <div class="prop-photo-placeholder">
-          <i class="ti ti-home" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
-          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
-        </div>
-        <div class="prop-badge">Active</div>
+      <div class="prop-header">
+        <div class="prop-price">$1,749,000</div>
+        <div class="prop-price-note">For Sale</div>
+        <span class="prop-status prop-status-sale">Active</span>
       </div>
       <div class="prop-body">
-        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$1,749,000</div>
-        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">McLean, VA 22101</div>
-        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
-          <span><strong style="color: #EDE9E0;">4</strong> bd</span>
-          <span><strong style="color: #EDE9E0;">4.5</strong> ba</span>
-          <span><strong style="color: #EDE9E0;">3,800</strong> sqft</span>
+        <div>
+          <div class="prop-address">7850 Crestview Drive</div>
+          <div class="prop-city">McLean, VA 22101</div>
         </div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>4</strong><span>Beds</span></div>
+          <div class="prop-spec"><strong>4.5</strong><span>Baths</span></div>
+          <div class="prop-spec"><strong>3,800</strong><span>Sq Ft</span></div>
+        </div>
+      </div>
+      <div class="prop-footer">
+        <span style="font-size: 9px; color: #444; letter-spacing: .08em; text-transform: uppercase;">Single Family</span>
         <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
-           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
-          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+           style="font-size: 9px; color: #C8A951; text-decoration: none; letter-spacing: .08em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 4px;">
+          Homes.com <i class="ti ti-external-link" style="font-size: 9px;"></i>
         </a>
       </div>
     </div>
-    <!-- Card 2 — Alexandria -->
+
+    <!-- Card 2 — Glebe Road · For Rent -->
     <div class="prop-card">
-      <div class="prop-photo">
-        <div class="prop-photo-placeholder">
-          <i class="ti ti-building" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
-          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
-        </div>
-        <div class="prop-badge">New Construction</div>
+      <div class="prop-header">
+        <div class="prop-price" style="font-size: 28px; color: #aaa;">Contact for Pricing</div>
+        <div class="prop-price-note">For Rent · /mo</div>
+        <span class="prop-status prop-status-rent">For Rent</span>
       </div>
       <div class="prop-body">
-        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$1,565,000</div>
-        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">Alexandria, VA 22309</div>
-        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
-          <span><strong style="color: #EDE9E0;">5</strong> bd</span>
-          <span><strong style="color: #EDE9E0;">4.5</strong> ba</span>
-          <span><strong style="color: #EDE9E0;">4,200</strong> sqft</span>
+        <div>
+          <div class="prop-address">N. Glebe Road</div>
+          <div class="prop-city">Alexandria, VA</div>
         </div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>5</strong><span>Beds</span></div>
+          <div class="prop-spec"><strong>4.5</strong><span>Baths</span></div>
+          <div class="prop-spec"><strong>4,200</strong><span>Sq Ft</span></div>
+        </div>
+      </div>
+      <div class="prop-footer">
+        <span style="font-size: 9px; color: #444; letter-spacing: .08em; text-transform: uppercase;">Rental</span>
         <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
-           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
-          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+           style="font-size: 9px; color: #C8A951; text-decoration: none; letter-spacing: .08em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 4px;">
+          Homes.com <i class="ti ti-external-link" style="font-size: 9px;"></i>
         </a>
       </div>
     </div>
-    <!-- Card 3 — Vienna -->
+
+    <!-- Card 3 — Balloa Road · For Rent -->
     <div class="prop-card">
-      <div class="prop-photo">
-        <div class="prop-photo-placeholder">
-          <i class="ti ti-home-2" style="font-size: 32px; color: #C8A951; opacity: .6;"></i>
-          <span style="font-size: 8px; color: #3a3a3a; letter-spacing: .12em; text-transform: uppercase;">Photo via Homes.com</span>
-        </div>
-        <div class="prop-badge">Active</div>
+      <div class="prop-header">
+        <div class="prop-price" style="font-size: 28px; color: #aaa;">Contact for Pricing</div>
+        <div class="prop-price-note">For Rent · /mo</div>
+        <span class="prop-status prop-status-rent">For Rent</span>
       </div>
       <div class="prop-body">
-        <div class="sr" style="font-size: 26px; font-weight: 600; color: #EDE9E0; margin-bottom: 6px;">$3,180,000</div>
-        <div style="font-size: 12px; color: #888; margin-bottom: 12px;">Vienna, VA 22181</div>
-        <div style="display: flex; gap: 16px; font-size: 11px; color: #666; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(200,169,81,0.1);">
-          <span><strong style="color: #EDE9E0;">6</strong> bd</span>
-          <span><strong style="color: #EDE9E0;">8</strong> ba</span>
-          <span><strong style="color: #EDE9E0;">7,500</strong> sqft</span>
+        <div>
+          <div class="prop-address">Balloa Road</div>
+          <div class="prop-city">Vienna, VA</div>
         </div>
+        <div class="prop-specs">
+          <div class="prop-spec"><strong>6</strong><span>Beds</span></div>
+          <div class="prop-spec"><strong>8</strong><span>Baths</span></div>
+          <div class="prop-spec"><strong>7,500</strong><span>Sq Ft</span></div>
+        </div>
+      </div>
+      <div class="prop-footer">
+        <span style="font-size: 9px; color: #444; letter-spacing: .08em; text-transform: uppercase;">Rental</span>
         <a href="https://www.homes.com/real-estate-agents/akhtar-yusufi/bqc41k9/" target="_blank" rel="noopener"
-           style="display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: #C8A951; text-decoration: none; letter-spacing: .06em; text-transform: uppercase;">
-          View on Homes.com <i class="ti ti-external-link" style="font-size: 10px;"></i>
+           style="font-size: 9px; color: #C8A951; text-decoration: none; letter-spacing: .08em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 4px;">
+          Homes.com <i class="ti ti-external-link" style="font-size: 9px;"></i>
         </a>
       </div>
     </div>
