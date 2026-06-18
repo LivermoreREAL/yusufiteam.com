@@ -217,7 +217,6 @@
       background: #0d0d0d; border-bottom: 0.5px solid rgba(200,169,81,0.12);
     }
     .mobile-menu-inner {
-      overflow: hidden; min-height: 0;
       display: flex; flex-direction: column;
       padding: 16px 20px 24px;
     }
@@ -238,8 +237,13 @@
       nav svg { width: 96px; height: 37px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .mobile-menu { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
-      .mobile-menu.open { grid-template-rows: 1fr; }
+      .mobile-menu {
+        display: block;
+        position: fixed; top: 65px; left: 0; right: 0; z-index: 99;
+        max-height: 0; overflow: hidden;
+        transition: max-height .35s ease;
+      }
+      .mobile-menu.open { max-height: 400px; }
       .section, .section-sm { padding: 48px 20px; }
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .grid-4 { grid-template-columns: 1fr; }
