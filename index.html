@@ -223,10 +223,35 @@
       /* CTA padding */
       .cd-dk[style*="padding: 60px"] { padding: 36px 24px !important; }
       .cd-dk[style*="padding: 60px"] h2 { font-size: 36px !important; }
+
+      /* Top phone bar */
+      div[style*="background:#C8A951"] { padding: 10px 20px !important; }
+      div[style*="background:#C8A951"] strong { font-size: 18px !important; }
+      div[style*="background:#C8A951"] a:first-child { font-size: 16px !important; }
+      div[style*="background:#C8A951"] a:last-child { display: none !important; }
+      div[style*="background:#C8A951"] span { display: none !important; }
+
+      /* Bottom contact info */
+      #contact [style*="font-size:36px"] { font-size: 24px !important; }
+      #contact [style*="font-size:26px"] { font-size: 18px !important; }
+      #contact [style*="font-size:22px"] { font-size: 15px !important; }
+      #contact [style*="font-size:28px"] { font-size: 22px !important; }
     }
   </style>
 </head>
 <body>
+
+<!-- TOP PHONE BAR -->
+<div style="background:#C8A951; padding:10px 48px; display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap;">
+  <a href="tel:7039195666" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:#0A0A0A; font-family:'DM Sans',sans-serif; font-size:20px; font-weight:500; letter-spacing:.01em;">
+    <i class="ti ti-phone-call" style="font-size:22px;"></i>
+    <strong style="font-size:24px; font-weight:600;">(703) 919-5666</strong>
+  </a>
+  <span style="color:rgba(10,10,10,0.35); font-size:18px;">|</span>
+  <a href="mailto:yusufiteam@msn.com" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:#0A0A0A; font-family:'DM Sans',sans-serif; font-size:16px; font-weight:400; opacity:.75;">
+    <i class="ti ti-mail" style="font-size:18px;"></i>yusufiteam@msn.com
+  </a>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -632,16 +657,19 @@
     </button>
   </div>
 
-  <!-- Contact pills -->
-  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding-top: 8px;">
-    <a class="pill" href="tel:7039195666">
-      <i class="ti ti-phone" style="font-size: 14px; color: #C8A951;"></i>(703) 919-5666
+  <!-- Contact info — large -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; padding-top: 20px;">
+    <a href="tel:7039195666" style="display:inline-flex; align-items:center; gap:14px; text-decoration:none; color:#EDE9E0; font-family:'DM Sans',sans-serif;">
+      <i class="ti ti-phone-call" style="font-size:28px; color:#C8A951;"></i>
+      <span style="font-size:36px; font-weight:500; letter-spacing:.01em;">(703) 919-5666</span>
     </a>
-    <a class="pill" href="mailto:yusufiteam@msn.com">
-      <i class="ti ti-mail" style="font-size: 14px; color: #C8A951;"></i>yusufiteam@msn.com
+    <a href="mailto:yusufiteam@msn.com" style="display:inline-flex; align-items:center; gap:14px; text-decoration:none; color:#EDE9E0; font-family:'DM Sans',sans-serif;">
+      <i class="ti ti-mail" style="font-size:28px; color:#C8A951;"></i>
+      <span style="font-size:26px; font-weight:300; color:rgba(237,233,224,.75);">yusufiteam@msn.com</span>
     </a>
-    <span class="pill">
-      <i class="ti ti-map-pin" style="font-size: 14px; color: #C8A951;"></i>9504 B Lee Hwy, Fairfax VA
+    <span style="display:inline-flex; align-items:center; gap:14px; color:#EDE9E0; font-family:'DM Sans',sans-serif;">
+      <i class="ti ti-map-pin" style="font-size:28px; color:#C8A951;"></i>
+      <span style="font-size:22px; font-weight:300; color:rgba(237,233,224,.6);">9504 B Lee Highway, Suite B · Fairfax, VA 22031</span>
     </span>
   </div>
 </section>
